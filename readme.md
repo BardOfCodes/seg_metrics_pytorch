@@ -5,7 +5,7 @@
 
 * Pixel Accuracy
 * mean Accuracy(of per-class pixel accuracy)
-* mean IOU(of per-class Mean IOU)
+* mean IOU(of per-class IOU)
 * Frequency weighted IOU
 
 For more information, kindly refer [Fully Convolutional Networks for Semantic Segmentation
