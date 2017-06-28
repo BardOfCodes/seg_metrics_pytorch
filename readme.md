@@ -35,7 +35,7 @@ Use
 
 ## Acknowledgement
 
-A few parts have been adopted from the code present in [martinkersner/py_img_seg_eval](https://github.com/martinkersner/py_img_seg_eval/tree/c0bf9787ebbe3e5e2c7833efe78b5b2d392afaf1). Although the formulations are a bit wrong, it was very helpful.
+A few parts have been adopted from the code present in [martinkersner/py_img_seg_eval](https://github.com/martinkersner/py_img_seg_eval/tree/c0bf9787ebbe3e5e2c7833efe78b5b2d392afaf1). Although the formulations were a bit wrong, it was very helpful.
 
 Also, a big thanks to [Video Analytics Lab](http://val.serc.iisc.ernet.in/valweb/).
 
