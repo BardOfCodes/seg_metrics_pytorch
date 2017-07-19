@@ -63,9 +63,3 @@ if __name__ == '__main__':
         file_ids = get_file_ids(args['<id_file>'])
         img_dim_reductor(args['<gt_path>'],file_ids,color_map)
         print('Total time taken: ',time.time()-start_time)
-        
-        
-        
-        
-        
-        
