@@ -2,6 +2,7 @@ import argparse
 from utils import *
 import pickle
 from docopt import docopt
+import time
 
 docstr = """Find semantic segmentation metrics for given predictions and ground truth images(For PASCAL VOC 2012).
 
@@ -16,14 +17,16 @@ Options:
   -h --help     Show this screen.
   --version     Show version.
   --batch_size=<int>          batch_size for processing in gpu[default: 20]
-  --gpu=<bool>                to use GPU or not[default: True]
+  --gpu=<int>                 if GPU is to be used, and which GPU to be used. Set blank for no GPU.[default: 0]
   --classes=<int>             number of classes[default: 21]
   --ignore_label=<int>        label to be ignored[default: 255]
 
 """
 if __name__ == '__main__':
     args = docopt(docstr, version='v0.1')
-    torch.cuda.set_device(3)
+    if(args['--gpu']):
+        torch.cuda.set_device(int(args['--gpu']))
+    start_time = time.time()
     if(args['find_metrics']):
         ###########
         pascal_voc_util =  pickle.load( open( "pascal_voc_util.pkl", "rb" ) )
@@ -41,6 +44,7 @@ if __name__ == '__main__':
         overall_acc = pixel_accuracy(hist.numpy())
         mean_ious = mean_iou(hist.numpy(),class_names)
         fmiou = freq_weighted_miou(hist.numpy(), class_names)
+        print('Total time taken: ',time.time()-start_time)
         
     if(args['convert_prediction']):
         ########
@@ -49,6 +53,7 @@ if __name__ == '__main__':
         ########
         file_ids = get_file_ids(args['<id_file>'])
         mat_to_png(args['<predict_path>'],file_ids,color_map)
+        print('Total time taken: ',time.time()-start_time)
         
     if(args['convert_gt']):
         ########
@@ -57,6 +62,7 @@ if __name__ == '__main__':
         ########
         file_ids = get_file_ids(args['<id_file>'])
         img_dim_reductor(args['<gt_path>'],file_ids,color_map)
+        print('Total time taken: ',time.time()-start_time)
         
         
         
