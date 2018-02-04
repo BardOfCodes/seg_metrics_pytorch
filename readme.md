@@ -18,7 +18,7 @@ Use
 
 ` python demo.py convert_prediction predict_loc id_file`
 
-### Convert Pascal VOC Validation filesfrom 3d-color to 2d-class-id .png format
+### Convert Pascal VOC Validation files from 3d-color to 2d-class-id .png format
 Use
 
 `python demo.py convert_gt gt_loc id_file`
@@ -36,7 +36,7 @@ Use
 ## Acknowledgement
 
 
-A few parts have been adopted from the code present in [martinkersner/py_img_seg_eval](https://github.com/martinkersner/py_img_seg_eval/tree/c0bf9787ebbe3e5e2c7833efe78b5b2d392afaf1). Although the formulations are slightly wrong, it was very helpful.
+A few parts have been adapted from the code present in [martinkersner/py_img_seg_eval](https://github.com/martinkersner/py_img_seg_eval/tree/c0bf9787ebbe3e5e2c7833efe78b5b2d392afaf1). Although the formulations are slightly wrong, it was very helpful.
 
 Also, a big thanks to [Video Analytics Lab](http://val.serc.iisc.ernet.in/valweb/).
 
